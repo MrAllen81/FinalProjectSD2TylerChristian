@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Currency Conversion Website</title>
+	<link rel="stylesheet" href="../public/css/registration.css">
+    <link rel="stylesheet" href="../public/css/global.css">
+    <script src="../public/js/global.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<img src="../public/images/CLIPBOARD.png" height = "150" alt="A plane showing how worldwide currency conversion is">
+        <p>Christian's currency conversion website</p>
+	</header>
+	<nav id="nav_menu">
+    	<ul>
+        	<li><a id="home">Home</a></li>
+        	<li><a id="reg" class="current">Registration</a></li>
+        	<li><a id="log">Login</a></li>	
+    	</ul>
+	</nav>
+    <aside>
+        <h1>Register</h1>
+        <p>Fill out the required fields to make an account</p>
+    </aside>
+	<main>
+		<form action="http://www.example.com/action_page.php">
+            <div class="RegPage">
+                <h2>First Name:
+                    <input type="text" name="FName" size="15" maxlength="30" required="required"/>
+                </h2>
+                <h2>Last Name:
+                    <input type="text" name="LName" size="15" maxlength="30" required="required"/>
+                </h2>
+                 <h2>Date Of Birth:
+                    <input type="text" name="DOB" size="15" maxlength="30" required="required"/>
+                </h2>
+                <h2>Phone Number:
+                    <input type="text" name="PNum" size="15" maxlength="30" required="required"/>
+                </h2>
+                <h2>Email Address:
+                    <input type="email" name="EAddress" size="15" maxlength="30" required="required"/>
+                </h2>
+                <h2>Submit:
+                    <input type="submit" class="button" value="Submit"/>
+                </h2>
+                <h2>Back
+                    <input type="button" class="button" onclick="history.back();" value="Back">
+                </h2>
+                <h2>Reset
+                    <input type="reset" class="button">
+                </h2>
+            </div>
+        </form>
+	</main>
+	<footer>
+		<p>CMPT 221 - Professor Kienzle</p>
+	</footer>
+    <script src="../public/js/global.js"></script> <!--I had to call the script for global a second time because the nav menu needs the the LI elements ID's read already to function-->
+</body>
+</html>

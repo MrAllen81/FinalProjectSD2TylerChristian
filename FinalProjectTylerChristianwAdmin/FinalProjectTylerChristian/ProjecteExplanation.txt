@@ -1,0 +1,1 @@
+This is a currency exchange rate calculating site. Here you can see how many USD you need to get a certain amount of another foreign currency, and vice versa. 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Currency Conversion Website</title>
+	<link rel="stylesheet" href="../public/css/home.css">
+    <link rel="stylesheet" href="../public/css/global.css">
+	<script type="text/javascript">
+    	$(document).ready(function(){
+			$('#nav_menu').slicknav({prependTo:"#mobile_menu"});
+    	});
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../public/js/global.js"></script>
+    <link rel="stylesheet" href="../public/css/slicknav.css">
+    <script src="../public/js/jquery.slicknav.min.js"></script>
+    <script src="../public/js/home.js"></script>
+</head>
+
+<body>
+	<header>
+		<img src="../public/images/PLANE.jpg" width = "200" alt="A plane showing how worldwide currency conversion is">
+        <p>Christian's currency conversion website</p>
+	</header>
+	<nav id="nav_menu">
+    	<ul>
+            <li><a id="home" class="current">Home</a></li>
+        	<li><a id="reg">Registration</a></li>
+        	<li><a id="prof">Profile</a></li>
+        	<li><a id="log">Login</a></li>	
+    	</ul>
+	</nav>
+	<main>
+		<section>
+			<p>USD to Euros:&nbsp;</p>
+            <form>
+                <input type="text" name="USD2EURO" size="15" maxlength="30" />
+            </form>
+            <p>&nbsp;Euro amount displayed here</p>
+		</section>
+        <div class="British">
+            <p>USD to England's Pound:&nbsp;</p>
+            <form>
+                <input type="text" name="USD2POUND" size="15" maxlength="30" />
+            </form>
+            <p>&nbsp;Euro amount displayed here</p>
+        </div>
+        <div class="Yen">
+            <p>USD to Japan's Yen:&nbsp;</p>
+            <form>
+                <input type="text" name="USD2YEN" size="15" maxlength="30" />
+            </form>
+            <p>&nbsp;Euro amount displayed here</p>
+        </div>
+        <div class="Yuan">
+            <p>USD to China's Yuan:&nbsp;</p>
+            <form>
+                <input type="text" name="USD2YUAN" size="15" maxlength="30" />
+            </form>
+            <p>&nbsp;Euro amount displayed here</p>
+        </div>
+
+	</main>
+	<footer>
+		<p>CMPT 221 - Professor Kienzle</p>
+	</footer>
+    <script src="../public/js/global.js"></script> <!--I had to call the script for global a second time because the nav menu needs the the LI elements ID's read already to function-->
+</body>
+</html>

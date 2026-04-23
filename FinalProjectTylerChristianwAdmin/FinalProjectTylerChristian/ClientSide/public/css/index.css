@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    background-image: url("../images/GLOBE.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    margin: 0;
+    display: flex;
+    height: 800px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.animateSpaceBar {
+     animation: pulse 1.4s ease-in-out infinite;
+   }
+   @keyframes pulse {
+     0%, 100% { opacity: 1; }
+     50%       { opacity: 0.2; }
+   }
+   .animateSpaceBar.flash {
+     animation: flash 0.15s ease-out forwards;
+   }
+   @keyframes flash {
+     0%   { color: inherit; transform: scale(1); }
+     50%  { color: #7c3aed; transform: scale(1.08); }
+     100% { color: inherit; transform: scale(1); }
+   }
+
+body header p {
+    border: 3px solid white;
+    background-color: black;
+    font-size: 200%;
+    color: white;
+}
+
+
+body div {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+body div p {
+    justify-self: center;
+    align-self: center;
+    border: 3px solid white;
+    background-color: black;
+    font-size: 200%;
+    color: white;
+    
+}
+section a {
+    border: 3px solid white;
+    background-color: black;
+    color: white;
+    font-size: 200%;
+}
+
+

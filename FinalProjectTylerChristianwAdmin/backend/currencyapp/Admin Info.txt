@@ -1,0 +1,7 @@
+Admin URL: http://127.0.0.1:8000/admin/
+
+Admin1 pass: maristu$12345
+Admin2 pass: #Knicks4life
+
+
+

@@ -1,0 +1,105 @@
+/* the styles for the elements */
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	background-color: white;
+}
+
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    width: 98%;                    
+    max-width: 1500px;
+    max-height: 800px;
+    margin: 0 auto;
+    border: 3px solid #00c3ff;
+    background-color: rgb(231, 231, 231);
+	display: grid;
+	grid-template-rows: auto auto auto auto;
+	grid-template-columns: 1500px;
+	grid-template-areas:
+		"header"
+		"navigation"
+		"main"
+		"footer";
+}
+
+/* the styles for the header */
+header {
+	grid-area: header;
+    display: flex;
+    gap: 300px;
+    font-size: 200%;
+    align-items: center;
+}
+
+header p {
+    justify-self: flex-start;
+}
+
+
+
+/* Navigation menu styles*/
+nav {
+	grid-area: navigation;
+}
+
+#nav_menu ul {
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	grid-template-rows: 100%;
+	align-content: center;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* This section and the 3 div files are for the 4 different currencies we can convert on this website*/
+/* The first section is for Euro's, the rest use their classes as identifiers*/
+section { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div.British {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div.Yen {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div.Yuan {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+main {
+    display: grid;
+    margin: 10px 0 0 0;
+    grid-template-columns: 100%;
+    grid-template-rows: 25% 25% 25% 25%;
+    min-height: 600px;
+    row-gap: 1.5%;
+}
+
+/* the styles for the footer */
+footer {
+	grid-area: footer;
+	background-color: #00c3ff;
+}
+
+footer p {
+	text-align: center;
+	color: white;
+	padding: 1.5%;
+}
