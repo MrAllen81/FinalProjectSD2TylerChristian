@@ -1,0 +1,41 @@
+
+html {
+	background-image: url("../images/CLOUDS.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+#nav_menu ul li a {
+    display: block;
+    text-align: center;
+    padding: 1em 0;
+    text-decoration: none;
+    background-color: #00c3ff;
+    color: white;
+    font-weight: bold;
+}
+
+#nav_menu a.current {
+	color: yellow;
+}
+
+a:focus, a:hover {
+	font-style: italic;
+}
+
+li a:hover {
+    cursor: pointer;
+}
+
+#button:hover {
+    cursor: pointer;
+}
+
+.button {
+    cursor: pointer;
+}
+

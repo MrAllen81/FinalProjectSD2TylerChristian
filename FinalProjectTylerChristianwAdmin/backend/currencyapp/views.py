@@ -1,5 +1,6 @@
 import json
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from .models import RegisteredUser
@@ -29,3 +30,15 @@ def register_user(request):
 
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+def index(request):
+    return render(request, "currencyapp/views/index.html")
+
+def home(request):
+    return render(request, "currencyapp/views/home.html")
+
+def profile(request):
+    return render(request, "currencyapp/views/profile.html")
+
+def registration(request):
+    return render(request, "currencyapp/views/registration.html")
