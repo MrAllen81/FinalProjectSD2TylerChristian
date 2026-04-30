@@ -13,7 +13,7 @@ document.querySelector('form').addEventListener('submit', async function(e) {
 
   // Send data to Django backend
   try {
-    const response = await fetch('http://localhost:8000/api/register/', {
+    const response = await fetch('http://localhost:8000/currencyapp/registration/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
