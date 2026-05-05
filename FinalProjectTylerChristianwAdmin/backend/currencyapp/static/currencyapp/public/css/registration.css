@@ -47,7 +47,7 @@ nav {
 
 #nav_menu ul {
 	display: grid;
-	grid-template-columns: 33% 33% 34%;
+	grid-template-columns: 25% 25% 25% 25%;
 	grid-template-rows: 100%;
 	align-content: center;
 	list-style-type: none;

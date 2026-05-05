@@ -9,6 +9,7 @@ html {
     background-position: center top;
 }
 
+
 #nav_menu ul li a {
     display: block;
     text-align: center;
@@ -23,11 +24,11 @@ html {
 	color: yellow;
 }
 
-a:focus, a:hover {
+#nav_menu ul li a:focus, #nav_menu ul li a:hover {
 	font-style: italic;
 }
 
-li a:hover {
+#nav_menu ul li a:hover {
     cursor: pointer;
 }
 
@@ -37,5 +38,11 @@ li a:hover {
 
 .button {
     cursor: pointer;
+}
+
+/* This section is the error label*/
+.error {
+    color: red;
+    font-weight: bold;
 }
 

@@ -1,3 +1,4 @@
+/*
 document.querySelector('form').addEventListener('submit', async function(e) {
   e.preventDefault();
   clearErrors();
@@ -94,7 +95,9 @@ function validateForm(firstName, lastName, dob, phoneNumber, email) {
 
   return isValid;
 }
+*/
 
+/*
 // ── Real-time validation as user types ────────────────────────
 document.querySelector('[name="FName"]').addEventListener('blur', function() {
   clearError('FName');
@@ -157,3 +160,4 @@ function clearError(fieldName) {
 function clearErrors() {
   ['FName', 'LName', 'DOB', 'PNum', 'EAddress'].forEach(clearError);
 }
+  */

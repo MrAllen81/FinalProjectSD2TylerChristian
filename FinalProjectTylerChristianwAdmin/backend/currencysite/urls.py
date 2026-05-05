@@ -5,6 +5,6 @@ from currencyapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', views.register_user, name='register_user'),
+    path('currencyapp/', include('django.contrib.auth.urls')),
     path('currencyapp/', include('currencyapp.urls')),
 ]

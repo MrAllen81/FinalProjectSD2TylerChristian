@@ -15,28 +15,30 @@
 <body>
 	<header>
 		<img src="{% static 'public/images/PROFILE.png' %}" width = "150" alt="A plane showing how worldwide currency conversion is">
-        <p>Christian's currency conversion website</p>
+        <p>Tyler and Christian's currency conversion website</p>
 	</header>
 	<nav id="nav_menu">
     	<ul>
         	<li><a id="home">Home</a></li>
         	<li><a id="reg">Registration</a></li>
         	<li><a id="prof" class="current">Profile</a></li>
-        	<li><a id="log">Login</a></li>	
+        	<li>{% if user.is_authenticated %} <a id="logout">Logout</a> {% else %} <a id="log">Login</a> {% endif %}</li>	
     	</ul>
 	</nav>
 	<main>
 		<section>
-			<aside id="one"><p>First Name: <a></a></p></aside>
-            <aside id="two"><p>Last Name: <a></a></p></aside>
-            <aside id="three"><p>Date of Birth: <a></a></p></aside>
-           <aside id="four"><p>Phone Number: <a></a></p></aside>
-           <aside id="five"><p>Email Address: <a></a></p></aside>
+			<aside id="one"><p>First Name: <a>{{ user.first_name }}</a></p></aside>
+            <aside id="two"><p>Last Name: <a>{{ user.last_name }}</a></p></aside>
+            <aside id="three"><p>Conversion Preference: <a>{{ user.regprofile.preference }} <br><br> 
+				<form action="" method="POST">
+					{% csrf_token %}
+					Change {{ form }}
+					<input type="submit" value="Submit"> 
+					<input type="button" class="button" onclick="history.back();" value="Back">
+				</form></a></p></aside>
+           <aside id="four"><p>Phone Number: <a>{{ user.regprofile.pNumber }}</a></p></aside>
+           <aside id="five"><p>Email Address: <a>{{ user.email }}</a></p></aside>
         </section>
-		<div class="button-group" id="button">
-    		<button onclick="goBack()">Back</button>
-    		<button onclick="submitProfile()">Submit</button>
-		</div>
 		<script src="{% static 'public/js/profile.js' %}"></script>
 	</main>
 	<footer>

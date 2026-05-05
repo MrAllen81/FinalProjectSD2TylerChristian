@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,14 +22,14 @@
 <body>
 	<header>
 		<img src="{% static 'public/images/PLANE.jpg' %}" width = "200" alt="A plane showing how worldwide currency conversion is">
-        <p>Christian's currency conversion website</p>
+        <p>Tyler and Christian's currency conversion website</p>
 	</header>
 	<nav id="nav_menu">
     	<ul>
             <li><a id="home" class="current">Home</a></li>
         	<li><a id="reg">Registration</a></li>
         	<li><a id="prof">Profile</a></li>
-        	<li><a id="log">Login</a></li>	
+        	<li>{% if user.is_authenticated %} <a id="logout">Logout</a> {% else %} <a id="log">Login</a> {% endif %}</li>	
     	</ul>
 	</nav>
 	<main>
@@ -46,21 +45,21 @@
             <form>
                 <input type="text" name="USD2POUND" size="15" maxlength="30" />
             </form>
-            <p>&nbsp;Euro amount displayed here</p>
+            <p>&nbsp;Pounds amount displayed here</p>
         </div>
         <div class="Yen">
             <p>USD to Japan's Yen:&nbsp;</p>
             <form>
                 <input type="text" name="USD2YEN" size="15" maxlength="30" />
             </form>
-            <p>&nbsp;Euro amount displayed here</p>
+            <p>&nbsp;Yen amount displayed here</p>
         </div>
         <div class="Yuan">
             <p>USD to China's Yuan:&nbsp;</p>
             <form>
                 <input type="text" name="USD2YUAN" size="15" maxlength="30" />
             </form>
-            <p>&nbsp;Euro amount displayed here</p>
+            <p>&nbsp;Yuan amount displayed here</p>
         </div>
 
 	</main>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Currency Conversion Website</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'public/css/login.css' %}">
+	<link rel="stylesheet" href="{% static 'public/css/global.css' %}">
+	<script src="{% static 'public/js/global.js' %}"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<img src="{% static 'public/images/CLIPBOARD.png' %}" height="150"
+			alt="A plane showing how worldwide currency conversion is">
+		<p>Tyler and Christian's currency conversion website</p>
+	</header>
+	<nav id="nav_menu">
+		<ul>
+			<li><a id="home">Home</a></li>
+			<li><a id="reg">Registration</a></li>
+			<li>{% if user.is_authenticated %} <a id="logout" class="current">Logout</a> {% else %} <a id="log" class="current">Login</a> {% endif %}</li>
+		</ul>
+	</nav>
+	<aside>
+		<h1>Login</h1>
+		<p>Fill out the required fields to log into your account</p>
+		<section class="error">
+			{% if messages %}
+				{% for message in messages %}
+					{{ message }}
+				{% endfor %}
+			{% endif %}
+		</section>
+	</aside>
+	<main>
+		<form action="" method="POST">
+			{% csrf_token %}
+			<div class="form-group">
+				<label for="exampleInputUsername1">Username</label>
+				<input type="text" class="form-control" name="username"
+					placeholder="Enter Username">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Password</label>
+				<input type="password" class="form-control" placeholder="Password" name="password">
+			</div>
+			<input type="submit" value="Submit">
+		</form>
+	</main>
+	<footer>
+		<p>CMPT 221 - Professor Kienzle</p>
+	</footer>
+	<script src="{% static 'public/js/global.js' %}"></script>
+	<!--I had to call the script for global a second time because the nav menu needs the the LI elements ID's read already to function-->
+</body>
+
+</html>

@@ -1,15 +1,5 @@
 $(document).ready(function () {
  
-/* I commented out this function because it overrided the global.css file making the background a picture of a cloud. LMK if you want this re-enabled.
-  const testImg = new Image();
-  testImg.onerror = function () {
-    $("html").css({
-      "background-image": "none",
-      "background-color": "#87CEEB",
-    });
-  };
-  testImg.src = "../images/CLOUDS.jpg";
- */
 
   function fixBackground() {
     const winW = $(window).width();
@@ -60,7 +50,7 @@ $(document).ready(function () {
   }});
 
 
-//Each of these var's are for each list element on the nav bar
+//Each of these var's are for each list element on the nav bar. Every var needs a listener for it to function.
 var homeButton = document.getElementById('home');
 
 homeButton.addEventListener('click', home, false);
@@ -79,10 +69,22 @@ function reg() {
 
 var logButton = document.getElementById('log');
 
-logButton.addEventListener('click', log, false);
+if (logButton) {
+  logButton.addEventListener('click', log, false);
+}
 
 function log() {
-    //The login functionality will be made with the back-end
+    window.location.href = 'loginP';
+}
+
+var logoutButton = document.getElementById('logout')
+
+if (logoutButton) {
+  logoutButton.addEventListener('click', logout, false);
+}
+
+function logout() {
+  window.location.href = 'logoutU'
 }
 
 var profButton = document.getElementById('prof');
@@ -92,4 +94,3 @@ profButton.addEventListener('click', prof, false);
 function prof() {
     window.location.href = 'profile';
 }
-
