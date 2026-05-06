@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
-  const API_KEY = "cur_live_V3yAjlOhpYovzymLcBC9XNW577U9gG0lh3CBH0av"; 
-  
+  const API_KEY = "fe77ecfa140dc61e52f80a99";
+
   let RATES = {
     euro:  null,
     pound: null,
@@ -9,14 +9,13 @@ $(document).ready(function () {
     yuan:  null,
   };
 
-  // Fetch live rates on page load
-  fetch(`https://api.currencyapi.com/v3/latest?apikey=${API_KEY}&base_currency=USD&currencies=EUR,GBP,JPY,CNY`)
-    .then(res => res.json())
+  fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/latest/USD`)
+    .then(res => res.json())   // <-- THIS LINE WAS MISSING
     .then(data => {
-      RATES.euro  = data.data.EUR.value;
-      RATES.pound = data.data.GBP.value;
-      RATES.yen   = data.data.JPY.value;
-      RATES.yuan  = data.data.CNY.value;
+      RATES.euro  = data.conversion_rates.EUR;
+      RATES.pound = data.conversion_rates.GBP;
+      RATES.yen   = data.conversion_rates.JPY;
+      RATES.yuan  = data.conversion_rates.CNY;
       console.log("Live rates loaded:", RATES);
     })
     .catch(err => {
@@ -49,37 +48,37 @@ $(document).ready(function () {
   // --- USD to Euro ---
   $("input[name='USD2EURO']").on("input", function () {
     const result = convert($(this).val(), RATES.euro);
-    if (result === null)          $euroOut.text("Euro amount displayed here");
+    if (result === null)           $euroOut.text("Euro amount displayed here");
     else if (result === "loading") $euroOut.text("Rates loading, try again shortly.");
-    else if (result === "error")  $euroOut.text("Please enter a valid number.");
-    else                          $euroOut.text(format(result, "€", 2));
+    else if (result === "error")   $euroOut.text("Please enter a valid number.");
+    else                           $euroOut.text(format(result, "€", 2));
   });
 
   // --- USD to British Pound ---
   $("input[name='USD2POUND']").on("input", function () {
     const result = convert($(this).val(), RATES.pound);
-    if (result === null)          $poundOut.text("Pound amount displayed here");
+    if (result === null)           $poundOut.text("Pound amount displayed here");
     else if (result === "loading") $poundOut.text("Rates loading, try again shortly.");
-    else if (result === "error")  $poundOut.text("Please enter a valid number.");
-    else                          $poundOut.text(format(result, "£", 2));
+    else if (result === "error")   $poundOut.text("Please enter a valid number.");
+    else                           $poundOut.text(format(result, "£", 2));
   });
 
   // --- USD to Japanese Yen ---
   $("input[name='USD2YEN']").on("input", function () {
     const result = convert($(this).val(), RATES.yen);
-    if (result === null)          $yenOut.text("Yen amount displayed here");
+    if (result === null)           $yenOut.text("Yen amount displayed here");
     else if (result === "loading") $yenOut.text("Rates loading, try again shortly.");
-    else if (result === "error")  $yenOut.text("Please enter a valid number.");
-    else                          $yenOut.text(format(result, "¥", 0));
+    else if (result === "error")   $yenOut.text("Please enter a valid number.");
+    else                           $yenOut.text(format(result, "¥", 0));
   });
 
   // --- USD to Chinese Yuan ---
   $("input[name='USD2YUAN']").on("input", function () {
     const result = convert($(this).val(), RATES.yuan);
-    if (result === null)          $yuanOut.text("Yuan amount displayed here");
+    if (result === null)           $yuanOut.text("Yuan amount displayed here");
     else if (result === "loading") $yuanOut.text("Rates loading, try again shortly.");
-    else if (result === "error")  $yuanOut.text("Please enter a valid number.");
-    else                          $yuanOut.text(format(result, "¥", 2));
+    else if (result === "error")   $yuanOut.text("Please enter a valid number.");
+    else                           $yuanOut.text(format(result, "¥", 2));
   });
 
 });
